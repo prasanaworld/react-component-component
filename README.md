@@ -26,10 +26,10 @@ This assessment has been successfully completed, with a primary emphasis on impl
 
 ## Screenshot 
 
-#### Requirement Screenshot
+### Requirement Screenshot
 
-![https://github.com/prasanaworld/cs-assessment/blob/master/public/unnamed.png](Requirement screenshot)
+<img src="https://raw.githubusercontent.com/prasanaworld/cs-assessment/master/public/unnamed.png" alt="requirement screenshot"> 
 
 ### Completed Screenshot
 
-![https://github.com/prasanaworld/cs-assessment/blob/master/public/completed_screenshot.png](complete Screenshot)
+<img src="https://raw.githubusercontent.com/prasanaworld/cs-assessment/master/public/completed_screenshot.png"  alt="completed screenshot" />
