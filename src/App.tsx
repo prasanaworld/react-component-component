@@ -1,9 +1,14 @@
 import "./App.css";
+import { CSButton } from "./components/atoms/button/Button";
+import downloadIcon from "./assets/arrow-bar-to-down.svg";
 
 function App() {
   return (
     <>
-      <h1>hello</h1>
+      <CSButton
+        label="Download Selected"
+        icon={<img src={downloadIcon} alt="download icon image" />}
+      ></CSButton>
     </>
   );
 }

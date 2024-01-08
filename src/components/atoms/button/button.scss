@@ -1,0 +1,26 @@
+@import "../../../unit.scss";
+
+.cs-button {
+    all: unset;
+    display: flex;
+    background-color: $button_background_color;
+    padding: $space;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: calc($space / 2);
+
+
+    &__icon {
+        padding-right: $space;
+    }
+
+    &__label {
+        text-align: center;
+        align-items: center;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background: $button_hover_background_color;
+    }
+}
