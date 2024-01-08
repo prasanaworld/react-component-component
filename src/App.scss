@@ -1,0 +1,7 @@
+@import "./unit.scss";
+
+.page-container {
+	background-color: $secondary-color;
+	height: 100vh;
+	padding: calc($space * 3);
+}

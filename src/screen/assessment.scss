@@ -1,0 +1,12 @@
+@import '../unit.scss';
+
+.cs-assessment {
+    background-color: $primary-color;
+    padding: calc($space * 2);
+    border-radius: $space;
+
+    &__header {
+        gap: calc($space * 2);
+        padding-bottom: $space;
+    }
+}

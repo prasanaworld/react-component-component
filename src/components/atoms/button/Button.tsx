@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import "./button.scss";
+import { Box } from "../box/box";
 
 export type CSButtonProps = {
   label: string;
@@ -11,9 +12,13 @@ export type CSButtonProps = {
 const ATOM_NAME = "cs-button";
 export function CSButton({ icon, label, onClick }: CSButtonProps) {
   return (
-    <button className={ATOM_NAME} onClick={onClick ? onClick : undefined}>
-      <span className={`${ATOM_NAME}__icon`}>{icon}</span>
-      <span className={`${ATOM_NAME}__label`}>{label}</span>
-    </button>
+    <Box
+      as="button"
+      className={ATOM_NAME}
+      onClick={onClick ? onClick : undefined}
+    >
+      <Box className={`${ATOM_NAME}__icon`}>{icon}</Box>
+      <Box className={`${ATOM_NAME}__label`}>{label}</Box>
+    </Box>
   );
 }

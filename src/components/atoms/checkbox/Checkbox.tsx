@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useRef } from "react";
 import "./checkbox.scss";
+import { Box } from "../box/box";
 
 interface HTMLCheckboxElement extends HTMLInputElement {
   checked: boolean;
@@ -42,16 +43,18 @@ export function CSCheckbox({ onChange, value, children }: CSCheckboxProps) {
   };
 
   return (
-    <label className={ATOM_NAME}>
-      <span className={`${ATOM_NAME}__container`}>
+    <Box as="label" className={ATOM_NAME}>
+      <Box as="span" className={`${ATOM_NAME}__container`}>
         <input
           ref={checkboxRef}
           type="checkbox"
           className={`${ATOM_NAME}__control`}
           onChange={handleChange}
         />
-        <span className={`${ATOM_NAME}__label`}>{children}</span>
-      </span>
-    </label>
+        <Box as="span" className={`${ATOM_NAME}__label`}>
+          {children}
+        </Box>
+      </Box>
+    </Box>
   );
 }

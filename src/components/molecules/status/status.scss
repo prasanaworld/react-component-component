@@ -1,12 +1,11 @@
 @import "../../../unit.scss";
 
-$highlight_color: #82d032;
-
 .cs-status {
     display: flex;
     gap: $space;
     width: max-content;
     position: relative;
+    font-size: 0.8rem;
 
     &__info {
         display: inline-block;

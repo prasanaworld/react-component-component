@@ -2,7 +2,8 @@
 
 .cs-checkbox {
     display: inline-block;
-    padding: $space ;
+    padding: $space;
+    cursor: pointer;
     
     &__container {
         display: flex;

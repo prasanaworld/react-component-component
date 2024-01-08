@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import CSS from "csstype";
 
 export type BoxStyleProps = CSS.Properties;
@@ -7,7 +7,8 @@ export type BoxProps = {
   children: ReactNode;
   as?: string;
   className?: string;
-} & BoxStyleProps;
+} & BoxStyleProps &
+  HTMLAttributes<HTMLElement>;
 
 export function Box({
   children,
