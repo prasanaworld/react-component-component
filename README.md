@@ -23,3 +23,11 @@ This assessment has been successfully completed, with a primary emphasis on impl
 4. Run the test
   `npm run test`
 
+
+## Screenshot 
+
+#### Requirement Screenshot
+[https://github.com/prasanaworld/cs-assessment/blob/master/public/unnamed.png](Requirement screenshot)
+
+### Completed Screenshot
+[https://github.com/prasanaworld/cs-assessment/blob/master/public/completed_screenshot.png](complete Screenshot)
