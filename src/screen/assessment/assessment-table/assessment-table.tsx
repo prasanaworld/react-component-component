@@ -30,6 +30,7 @@ export function AssessmentTable({
             return (
               <CSTable.Row
                 key={row.name}
+                ariaLabel="click to select row"
                 isSelectable={true}
                 isChecked={selectedItem.has(row.name)}
                 onSelected={(state) => {

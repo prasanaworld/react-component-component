@@ -11,7 +11,7 @@ const MOLECULE_NAME = "cs-status";
 export function CSStatus({ showInfo, children }: StatusProps) {
   return (
     <CSLabel className={MOLECULE_NAME}>
-      {showInfo && <span className={`${MOLECULE_NAME}__info`}></span>}
+      {showInfo && <span className={`${MOLECULE_NAME}__info`}>{showInfo}</span>}
       {children}
     </CSLabel>
   );

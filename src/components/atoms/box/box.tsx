@@ -7,13 +7,14 @@ export type BoxProps = {
   children: ReactNode;
   as?: string;
   className?: string;
-} & BoxStyleProps &
-  HTMLAttributes<HTMLElement>;
+  elementProps?: HTMLAttributes<HTMLElement>;
+} & BoxStyleProps;
 
 export function Box({
   children,
   className = "",
   as = "div",
+  elementProps,
   ...rest
 }: BoxProps) {
   return React.createElement(
@@ -21,6 +22,7 @@ export function Box({
     {
       style: { ...rest },
       className,
+      ...elementProps,
     },
     children
   );

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react";
+import { HTMLAttributes, ReactNode, useEffect, useRef } from "react";
 import "./checkbox.scss";
 import { Box } from "../box/box";
 
@@ -14,10 +14,16 @@ export type CSCheckboxProps = {
   onChange?: (newValue: checkboxValueType) => void;
   indeterminate?: boolean;
   value?: checkboxValueType;
+  elementProps?: HTMLAttributes<HTMLElement>;
 };
 
 const ATOM_NAME = "cs-checkbox";
-export function CSCheckbox({ onChange, value, children }: CSCheckboxProps) {
+export function CSCheckbox({
+  onChange,
+  value,
+  children,
+  elementProps,
+}: CSCheckboxProps) {
   const checkboxRef = useRef<HTMLCheckboxElement>(null);
 
   useEffect(() => {
@@ -43,7 +49,7 @@ export function CSCheckbox({ onChange, value, children }: CSCheckboxProps) {
   };
 
   return (
-    <Box as="label" className={ATOM_NAME}>
+    <Box as="label" className={ATOM_NAME} elementProps={{ ...elementProps }}>
       <Box as="span" className={`${ATOM_NAME}__container`}>
         <input
           ref={checkboxRef}

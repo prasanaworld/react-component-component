@@ -16,6 +16,7 @@ export type CSTableRowProps = {
     | null
     | boolean
   >;
+  ariaLabel?: string;
   isHeader?: boolean;
   isSelectable?: boolean;
   isChecked?: boolean;
@@ -25,6 +26,7 @@ export type CSTableRowProps = {
 export function CSTableRow({
   children,
   onSelected,
+  ariaLabel,
   isHeader = false,
   isSelectable = false,
   isChecked = false,
@@ -55,6 +57,7 @@ export function CSTableRow({
   const selectedCheckBox = isSelectable ? (
     <CSTableCell className={`${ORGANISM_NAME}__selectable-cell`}>
       <CSCheckbox
+        elementProps={{ "aria-label": ariaLabel }}
         value={isChecked ? "checked" : "unchecked"}
         onChange={handleChange}
       >
