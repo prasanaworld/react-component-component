@@ -18,6 +18,7 @@ export type CSTableRowProps = {
   >;
   isHeader?: boolean;
   isSelectable?: boolean;
+  isChecked?: boolean;
   onSelected?: (isSelected: boolean) => void;
 } & BoxStyleProps;
 
@@ -26,6 +27,7 @@ export function CSTableRow({
   onSelected,
   isHeader = false,
   isSelectable = false,
+  isChecked = false,
   ...styleProps
 }: CSTableRowProps) {
   const tableContext = useContext(TableContext);
@@ -52,7 +54,12 @@ export function CSTableRow({
 
   const selectedCheckBox = isSelectable ? (
     <CSTableCell className={`${ORGANISM_NAME}__selectable-cell`}>
-      <CSCheckbox onChange={handleChange}> </CSCheckbox>
+      <CSCheckbox
+        value={isChecked ? "checked" : "unchecked"}
+        onChange={handleChange}
+      >
+        {" "}
+      </CSCheckbox>
     </CSTableCell>
   ) : isHeader && tableContext.isSelectable ? (
     <CSTableHeader className={`${ORGANISM_NAME}__header-empty`}></CSTableHeader>

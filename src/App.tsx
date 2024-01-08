@@ -1,5 +1,5 @@
 import { Box } from "./components/atoms/box/box";
-import { Assessment, AssessmentDataType } from "./screen/Assessment";
+import { Assessment, AssessmentDataType } from "./screen/assessment/Assessment";
 
 import "./App.scss";
 
