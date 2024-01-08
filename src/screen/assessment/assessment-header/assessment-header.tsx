@@ -5,7 +5,7 @@ import {
 } from "../../../components/atoms/checkbox/Checkbox";
 import { Flex } from "../../../components/atoms/flex/Flex";
 import downloadIcon from "../../../assets/arrow-bar-to-down.svg";
-import { AssessmentDataType, SCREEN_NAME } from "../Assessment";
+import { AssessmentDataType, SCREEN_NAME } from "../assessment";
 import { CSAlertBox } from "../../../components/molecules/alert-box/alert-box";
 import { useState } from "react";
 import { CSLabel } from "../../../components/atoms/label/label";
@@ -45,6 +45,7 @@ export function AssessmentHeader({
             ? `click to select all items`
             : "click to uncheck all",
         }}
+        dataTestId={"select-all"}
       >
         {selectedItem.size === 0
           ? "None Selected"
@@ -53,7 +54,14 @@ export function AssessmentHeader({
 
       <CSButton
         icon={<img src={downloadIcon} alt="download icon image" />}
-        onClick={() => setAlert(true)}
+        className={
+          selectedItem.size === 0 ? `${SCREEN_NAME}__button--disabled` : ""
+        }
+        onClick={() => {
+          if (selectedItem.size > 0) {
+            setAlert(true);
+          }
+        }}
       >
         Download Selected
       </CSButton>
@@ -73,7 +81,7 @@ export function AssessmentHeader({
               className={`${SCREEN_NAME}__assessment-model-fields`}
             >
               <CSLabel
-                className={`${SCREEN_NAME}__field ${SCREEN_NAME}_field--highlight`}
+                className={`${SCREEN_NAME}__field ${SCREEN_NAME}__field--highlight`}
               >
                 {item.device}
               </CSLabel>

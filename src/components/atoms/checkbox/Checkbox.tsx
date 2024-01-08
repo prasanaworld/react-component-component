@@ -14,6 +14,7 @@ export type CSCheckboxProps = {
   onChange?: (newValue: checkboxValueType) => void;
   indeterminate?: boolean;
   value?: checkboxValueType;
+  dataTestId?: string;
   elementProps?: HTMLAttributes<HTMLElement>;
 };
 
@@ -23,6 +24,7 @@ export function CSCheckbox({
   value,
   children,
   elementProps,
+  dataTestId,
 }: CSCheckboxProps) {
   const checkboxRef = useRef<HTMLCheckboxElement>(null);
 
@@ -56,6 +58,14 @@ export function CSCheckbox({
           type="checkbox"
           className={`${ATOM_NAME}__control`}
           onChange={handleChange}
+          data-TestId={dataTestId}
+          aria-checked={
+            value === "indeterminate"
+              ? "mixed"
+              : value === "checked"
+              ? "true"
+              : "false"
+          }
         />
         <Box as="span" className={`${ATOM_NAME}__label`}>
           {children}

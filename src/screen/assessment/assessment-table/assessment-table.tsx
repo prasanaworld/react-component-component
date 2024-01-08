@@ -1,7 +1,7 @@
 import { Flex } from "../../../components/atoms/flex/Flex";
 import { CSStatus } from "../../../components/molecules/status/status";
 import { CSTable } from "../../../components/organisms/table/table";
-import { AssessmentDataType, SCREEN_NAME } from "../Assessment";
+import { AssessmentDataType, SCREEN_NAME } from "../assessment";
 
 export type AssessmentTableProps = {
   selectedItem: Set<string>;
@@ -30,6 +30,7 @@ export function AssessmentTable({
             return (
               <CSTable.Row
                 key={row.name}
+                name={row.name}
                 ariaLabel="click to select row"
                 isSelectable={true}
                 isChecked={selectedItem.has(row.name)}

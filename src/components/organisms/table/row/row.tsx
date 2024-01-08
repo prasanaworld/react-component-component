@@ -20,6 +20,7 @@ export type CSTableRowProps = {
   isHeader?: boolean;
   isSelectable?: boolean;
   isChecked?: boolean;
+  name?: string;
   onSelected?: (isSelected: boolean) => void;
 } & BoxStyleProps;
 
@@ -27,6 +28,7 @@ export function CSTableRow({
   children,
   onSelected,
   ariaLabel,
+  name,
   isHeader = false,
   isSelectable = false,
   isChecked = false,
@@ -60,6 +62,7 @@ export function CSTableRow({
         elementProps={{ "aria-label": ariaLabel }}
         value={isChecked ? "checked" : "unchecked"}
         onChange={handleChange}
+        dataTestId={`row-${name ?? ""}`}
       >
         {" "}
       </CSCheckbox>
