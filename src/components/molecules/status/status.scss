@@ -1,0 +1,21 @@
+@import "../../../unit.scss";
+
+$highlight_color: #82d032;
+
+.cs-status {
+    display: flex;
+    gap: $space;
+    width: max-content;
+    position: relative;
+
+    &__info {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: $highlight_color;
+        left: -30px;
+    }
+}

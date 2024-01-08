@@ -3,6 +3,7 @@ import { CSButton } from "./components/atoms/button/Button";
 import downloadIcon from "./assets/arrow-bar-to-down.svg";
 import { CSCheckbox } from "./components/atoms/checkbox/Checkbox";
 import { CSTable } from "./components/organisms/table/table";
+import { CSStatus } from "./components/molecules/status/status";
 
 function App() {
   const tableData = [
@@ -50,7 +51,11 @@ function App() {
         <CSTable.Cell width={"40%"} textAlign="left">
           {row.path}
         </CSTable.Cell>
-        <CSTable.Cell>{row.status}</CSTable.Cell>
+        <CSTable.Cell>
+          <CSStatus showInfo={row.status === "available"}>
+            {row.status}
+          </CSStatus>
+        </CSTable.Cell>
       </CSTable.Row>
     );
   });
@@ -74,7 +79,9 @@ function App() {
           <CSTable.Header>name</CSTable.Header>
           <CSTable.Header>device</CSTable.Header>
           <CSTable.Header textAlign="left">path</CSTable.Header>
-          <CSTable.Header>status</CSTable.Header>
+          <CSTable.Header textAlign="left" width={"10%"}>
+            status
+          </CSTable.Header>
         </CSTable.Row>
         <>{tableRow}</>
       </CSTable>
