@@ -1,11 +1,26 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import CSS from "csstype";
-import "./hstack.scss";
+
+export type BoxStyleProps = CSS.Properties;
 
 export type BoxProps = {
   children: ReactNode;
-} & CSS.Properties;
+  as?: string;
+  className?: string;
+} & BoxStyleProps;
 
-export function Box({ children, ...rest }: BoxProps) {
-  return <div style={{ ...rest }}>{children}</div>;
+export function Box({
+  children,
+  className = "",
+  as = "div",
+  ...rest
+}: BoxProps) {
+  return React.createElement(
+    as,
+    {
+      style: { ...rest },
+      className,
+    },
+    children
+  );
 }

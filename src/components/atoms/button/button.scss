@@ -1,5 +1,9 @@
 @import "../../../unit.scss";
 
+
+$button_background_color: transparent;
+$button_hover_background_color: rgba(55, 201, 231, 0.2901960784);
+
 .cs-button {
     all: unset;
     display: flex;

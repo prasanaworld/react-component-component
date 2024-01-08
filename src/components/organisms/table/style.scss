@@ -1,0 +1,43 @@
+@import "../../../unit.scss";
+
+$selected-cell-width: 50px;
+$border-color: #f1f1f1;
+$row-hover-color: #eeeeee;
+
+.cs-table {
+    width: 100%;
+    border: solid 1px $border-color;
+    margin: 0 auto;
+    
+    &__row {
+        border-bottom: solid 1px $border-color;
+       
+        &:hover {
+            background-color: $row-hover-color;
+            cursor: pointer;
+        }
+
+        &--header {
+            border-bottom: solid 1px $border-color;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+    }
+
+
+    &__cell {
+        text-align: center;
+        padding: $space;
+    }
+
+    &__header-cell {
+        padding-top: calc($space * 2);
+        text-transform: capitalize;
+    }
+
+    &__selectable-cell, &__header-empty {
+        width: $selected-cell-width;
+    }
+}

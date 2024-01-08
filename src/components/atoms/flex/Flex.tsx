@@ -1,5 +1,4 @@
 import { Box, BoxProps } from "../box/box";
-import "./hstack.scss";
 
 export function Flex({ children, ...rest }: BoxProps) {
   return (

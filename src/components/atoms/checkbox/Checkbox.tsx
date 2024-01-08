@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import "./checkbox.scss";
 
 interface HTMLCheckboxElement extends HTMLInputElement {
@@ -6,17 +6,17 @@ interface HTMLCheckboxElement extends HTMLInputElement {
   indeterminate: boolean;
 }
 
-type checkboxValueType = "checked" | "unchecked" | "indeterminate";
+export type checkboxValueType = "checked" | "unchecked" | "indeterminate";
 
 export type CSCheckboxProps = {
-  label: string;
+  children: ReactNode;
   onChange?: (newValue: checkboxValueType) => void;
   indeterminate?: boolean;
   value?: checkboxValueType;
 };
 
 const ATOM_NAME = "cs-checkbox";
-export function CSCheckbox({ onChange, value, label }: CSCheckboxProps) {
+export function CSCheckbox({ onChange, value, children }: CSCheckboxProps) {
   const checkboxRef = useRef<HTMLCheckboxElement>(null);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export function CSCheckbox({ onChange, value, label }: CSCheckboxProps) {
           className={`${ATOM_NAME}__control`}
           onChange={handleChange}
         />
-        <span className={`${ATOM_NAME}__label`}>{label}</span>
+        <span className={`${ATOM_NAME}__label`}>{children}</span>
       </span>
     </label>
   );
