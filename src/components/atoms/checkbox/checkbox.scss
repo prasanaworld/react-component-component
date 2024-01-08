@@ -1,0 +1,13 @@
+@import "../../../unit.scss";
+
+.cs-checkbox {
+    display: inline-block;
+    padding: $space ;
+    
+    &__container {
+        display: flex;
+        gap: $space;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
