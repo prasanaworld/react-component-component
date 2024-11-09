@@ -1,12 +1,10 @@
-# CS - Assessment
+# React Compound component design pattern example
+This repo contain basic example of reusable components adhering to the [compound component design pattern](https://www.smashingmagazine.com/2021/08/compound-components-react/).
 
-This assessment has been successfully completed, with a primary emphasis on implementing the solution using React with TypeScript. The repository is structured to address the following key aspects:
 
-
-1. Implementation of reusable components adhering to the [compound component design pattern](https://www.smashingmagazine.com/2021/08/compound-components-react/).
-2. Integration of unit tests for comprehensive code coverage.
-3. Incorporation of TypeScript for enhanced type safety.
-4. Ensuring accessibility of components and the user interface, with support for both keyboard navigation and screen reader functionality.
+1. Integration of unit tests for comprehensive code coverage.
+2. Incorporation of TypeScript for enhanced type safety.
+3. Ensuring accessibility of components and the user interface, with support for both keyboard navigation and screen reader functionality.
    
 
 ## How to run the 
